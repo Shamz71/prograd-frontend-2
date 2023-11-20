@@ -13,8 +13,8 @@
   </header>
 
   <div class="search-container">
-    <input type="text" placeholder="Search">
-    <button>Search</button>
+    <input type="text" id="search-input" placeholder="Search">
+    <button onclick="searchProjects()">Search</button>
   </div>
 
   <div class="category-dropdown">
@@ -26,6 +26,14 @@
     </select>
   </div>
 
+  <hr>
+  Search Results:-
+  <section id="search-results" class="project-container">
+    <!-- Search results will be dynamically populated here -->
+  </section>
+  <hr>
+
+  Projects:-
   <div class="project-container">
     <!-- Project cards will be dynamically populated here -->
     <div class="project" data-category="design" onclick="openModal('ez.jpg')">
