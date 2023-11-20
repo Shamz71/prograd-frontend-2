@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behance Clone</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Behance Clone</h1>
+  </header>
+
+  <div class="search-container">
+    <input type="text" placeholder="Search">
+    <button>Search</button>
+  </div>
+
+  <div class="category-dropdown">
+    <select onchange="filterProjects()">
+      <option value="all">All Categories</option>
+      <option value="design">Design</option>
+      <option value="photography">Photography</option>
+      <option value="illustration">Illustration</option>
+    </select>
+  </div>
+
+  <div class="project-container">
+    <!-- Project cards will be dynamically populated here -->
+    <div class="project" data-category="design" onclick="openModal('ez.jpg')">
+      <img src="ez.jpg" alt="Project 1">
+      <button id="like-button-0" class="like-button" onclick="toggleLike(0)">Like</button>
+    </div>
+    <div class="project" data-category="photography" onclick="openModal('ez1.jpg')">
+      <img src="ez1.jpg" alt="Project 2">
+      <button id="like-button-1" class="like-button" onclick="toggleLike(1)">Like</button>
+    </div>
+    <div class="project" data-category="illustration" onclick="openModal('ez1.jpg')">
+        <img src="ez2.jpg" alt="Project 3">
+        <button id="like-button-2" class="like-button" onclick="toggleLike(2)">Like</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeModal()" style="cursor: pointer; padding: 10px;">&times;</span>
+      <img id="modalImage" src="" alt="Modal Image">
+    </div>
+  </div>
+
+  <script src = "test.js">
+  </script>
+
+</body>
+</html>
