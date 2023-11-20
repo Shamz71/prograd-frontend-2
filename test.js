@@ -31,7 +31,6 @@ var projects = [
 { name: 'Project 1', category: 'design', image: 'ez.jpg' },
 { name: 'Project 2', category: 'photography', image: 'ez1.jpg' },
 { name: 'Project 3', category: 'illustration', image: 'ez2.jpg' }
-// Add more projects as needed
 ];
 
 var searchInput = document.querySelector('input[type="text"]');
@@ -86,3 +85,52 @@ if (likedProjects.includes(index)) {
     likeButton.classList.add('liked');
 }
 }
+
+function searchProjects() {
+    var searchInput = document.getElementById('search-input');
+    var inputValue = searchInput.value.toLowerCase();
+
+    var matchingProjects = projects.filter(function(project) {
+      return project.name.toLowerCase().includes(inputValue);
+    });
+
+    displaySearchResults(matchingProjects);
+  }
+
+  function displaySearchResults(results) {
+    var searchResultsContainer = document.getElementById('search-results');
+    searchResultsContainer.innerHTML = '';
+
+    results.forEach(function(project) {
+      var projectCard = createProjectCard(project);
+      searchResultsContainer.appendChild(projectCard);
+    });
+  }
+
+function createProjectCard(project) {
+    var projectCard = document.createElement('div');
+    projectCard.classList.add('project');
+    projectCard.onclick = function() {
+      openModal(project.image);
+    };
+
+    var projectImage = document.createElement('img');
+    projectImage.src = project.image;
+    projectImage.alt = project.name;
+
+    var likeButton = document.createElement('button');
+    likeButton.classList.add('like-button');
+    likeButton.id = 'like-button-' + projects.indexOf(project);
+    likeButton.onclick = function() {
+      toggleLike(projects.indexOf(project));
+    };
+    if (likedProjects.includes(projects.indexOf(project))) {
+      likeButton.classList.add('liked');
+    }
+    likeButton.textContent = 'Like';
+
+    projectCard.appendChild(projectImage);
+    projectCard.appendChild(likeButton);
+
+    return projectCard;
+  }
