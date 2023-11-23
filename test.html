@@ -15,6 +15,7 @@
   <div class="search-container">
     <input type="text" id="search-input" placeholder="Search">
     <button onclick="searchProjects()">Search</button>
+    <button onclick="clearsearchProjects()">Clear</button>
   </div>
 
   <div class="category-dropdown">
@@ -36,16 +37,16 @@
   Projects:-
   <div class="project-container">
     <!-- Project cards will be dynamically populated here -->
-    <div class="project" data-category="design" onclick="openModal('ez.jpg')">
-      <img src="ez.jpg" alt="Project 1">
+    <div class="project" data-category="design">
+      <img src="ez.jpg" alt="Project 1" onclick="openModal('ez.jpg')">
       <button id="like-button-0" class="like-button" onclick="toggleLike(0)">Like</button>
     </div>
-    <div class="project" data-category="photography" onclick="openModal('ez1.jpg')">
-      <img src="ez1.jpg" alt="Project 2">
+    <div class="project" data-category="photography">
+      <img src="ez1.jpg" alt="Project 2" onclick="openModal('ez1.jpg')">
       <button id="like-button-1" class="like-button" onclick="toggleLike(1)">Like</button>
     </div>
-    <div class="project" data-category="illustration" onclick="openModal('ez1.jpg')">
-        <img src="ez2.jpg" alt="Project 3">
+    <div class="project" data-category="illustration">
+        <img src="ez2.jpg" alt="Project 3" onclick="openModal('ez2.jpg')">
         <button id="like-button-2" class="like-button" onclick="toggleLike(2)">Like</button>
     </div>
   </div>
