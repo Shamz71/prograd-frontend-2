@@ -29,7 +29,7 @@ if (selectedCategory === 'all' || projectCategory === selectedCategory) {
 // Autocomplete functionality
 var projects = [
 { name: 'Project 1', category: 'design', image: 'ez.jpg' },
-{ name: 'Project 2', category: 'photography', image: 'ez1.jpg' },
+{ name: 'Project 2', category: 'photography', image: 'wallpaperflare.com_wallpaper (2).jpg' },
 { name: 'Project 3', category: 'illustration', image: 'ez2.jpg' }
 ];
 
@@ -97,9 +97,9 @@ function searchProjects() {
     displaySearchResults(matchingProjects);
   }
 
-  function clearsearchProjects(){
-    displaySearchResults("");
-  }
+function clearsearchProjects(){
+  displaySearchResults("");
+}
 
   function displaySearchResults(results) {
     var searchResultsContainer = document.getElementById('search-results');
