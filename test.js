@@ -97,6 +97,10 @@ function searchProjects() {
     displaySearchResults(matchingProjects);
   }
 
+  function clearsearchProjects(){
+    displaySearchResults("");
+  }
+
   function displaySearchResults(results) {
     var searchResultsContainer = document.getElementById('search-results');
     searchResultsContainer.innerHTML = '';
